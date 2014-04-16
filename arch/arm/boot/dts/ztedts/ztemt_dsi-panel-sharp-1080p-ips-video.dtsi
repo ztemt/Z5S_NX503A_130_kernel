@@ -1,0 +1,113 @@
+/* Copyright (c) 2012-2013, The Linux Foundation. All rights reserved.
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 and
+ * only version 2 as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ */
+
+&soc {
+
+	qcom,mdss_dsi_shartp_1080p_video {
+		compatible = "qcom,mdss-dsi-panel";
+		label = "shartp 1080p video mode dsi panel";
+		status = "disable";
+		qcom,dsi-ctrl-phandle = <&mdss_dsi0>;
+		qcom,enable-gpio = <&msmgpio 58 0>;
+		qcom,avddn-enable-gpio = <&msmgpio 8 0>;
+		qcom,iovdd-enable-gpio = <&msmgpio 5 0>;
+		qcom,rst-gpio = <&pm8941_gpios 19 0>;
+		qcom,pm-bl-gpio = <&pm8941_gpios 36 0>;
+		qcom,mdss-pan-res = <1080 1920>;
+		qcom,mdss-pan-bpp = <24>;
+		qcom,mdss-pan-dest = "display_1";
+		qcom,mdss-pan-porch-values = <58 12 100 4 2 4>;
+		qcom,mdss-pan-underflow-clr = <0xff>;
+		qcom,mdss-pan-bl-ctrl = "bl_ctrl_dcs";
+		qcom,mdss-pan-bl-levels = <1 5466>;
+		qcom,mdss-pan-dsi-mode = <0>;
+		qcom,mdss-pan-dsi-h-pulse-mode = <0>;
+		qcom,mdss-pan-dsi-h-power-stop = <0 0 0>;
+		qcom,mdss-pan-dsi-bllp-power-stop = <1 1>;
+		qcom,mdss-pan-dsi-traffic-mode = <1>;
+		qcom,mdss-pan-dsi-dst-format = <3>;
+		qcom,mdss-pan-dsi-vc = <0>;
+		qcom,mdss-pan-dsi-rgb-swap = <0>;
+		qcom,mdss-pan-dsi-data-lanes = <1 1 1 1>;
+		qcom,mdss-pan-dsi-dlane-swap = <0>;
+		qcom,mdss-pan-dsi-t-clk = <0x1b 0x04>;
+		qcom,mdss-pan-dsi-stream = <0>;
+		qcom,mdss-pan-dsi-mdp-tr = <0x0>;
+		qcom,mdss-pan-dsi-dma-tr = <0x04>;
+		qcom,mdss-pan-dsi-frame-rate = <60>;
+		qcom,panel-phy-regulatorSettings = [07 09 03 00  /* Regualotor settings */
+						    20 00 01];
+		qcom,panel-phy-timingSettings = [42 36 24 00 66 68
+						    28 38 2a 03 04 00];
+		qcom,panel-phy-strengthCtrl = [ff 06];
+		qcom,panel-phy-bistCtrl = [00 00 b1 ff           /* BIST Ctrl settings */
+					   00 00];
+		qcom,panel-phy-laneConfig = [00 00 00 00 00 00 00 01 97 /* lane0 config */
+					     00 00 00 00 05 00 00 01 97 /* lane1 config */
+					     00 00 00 00 0a 00 00 01 97 /* lane2 config */
+					     00 00 00 00 0f 00 00 01 97 /* lane3 config */
+					     00 c0 00 00 00 00 00 01 bb]; /* Clk ln config */
+
+		qcom,panel-on-cmds = [23 01 00 00 00 00 02 b0 04
+					05 01 00 00 00 00 02 00 00
+					05 01 00 00 00 00 02 00 00
+					23 01 00 00 00 00 02 d6 01
+					29 01 00 00 00 00 08
+						ce 00 01 88 c1 00
+						1e 04
+					29 01 00 00 00 00 21 ca
+						00 80 80 80 80 80 80 80 08 20
+						80 80 0a 4a 37 a0 55 f8 0c 0c
+						20 10 3f 3f 00 00 10 10 3f 3f
+						3f 3f
+					15 01 00 00 00 00 02 55 01
+					15 01 00 00 00 00 02 53 2c
+					05 01 00 00 00 00 02 29 00
+					05 01 00 00 78 00 02 11 00];
+		qcom,panel-enhance_cmd_i = [23 01 00 00 00 00 02 b0 04
+					05 01 00 00 00 00 02 00 00
+					05 01 00 00 00 00 02 00 00
+					23 01 00 00 00 00 02 d6 01
+					29 01 00 00 00 00 08
+						ce 00 01 88 c1 00
+						1e 04
+					29 01 00 00 00 00 21 ca
+						01 80 98 98 9b 40 be be 20 20
+						80 fe 0a 4a 37 a0 55 f8 0c 0c
+						20 10 3f 3f 00 00 10 10 3f 3f
+						3f 3f
+					15 01 00 00 00 00 02 55 01
+					15 01 00 00 00 00 02 53 2c
+					05 01 00 00 00 00 02 29 00
+					05 01 00 00 78 00 02 11 00];
+		qcom,panel-enhance_cmd_n = [23 01 00 00 00 00 02 b0 04
+					05 01 00 00 00 00 02 00 00
+					05 01 00 00 00 00 02 00 00
+					23 01 00 00 00 00 02 d6 01
+					29 01 00 00 00 00 08
+						ce 00 01 88 c1 00
+						1e 04
+					29 01 00 00 00 00 21 ca
+						01 80 92 92 9b 75 9b 9b 20 20
+						80 fe 0a 4a 37 a0 55 f8 0c 0c
+						20 10 3f 3f 00 00 10 10 3f 3f
+						3f 3f
+					15 01 00 00 00 00 02 55 01
+					15 01 00 00 00 00 02 53 2c
+					05 01 00 00 00 00 02 29 00
+					05 01 00 00 78 00 02 11 00];
+		qcom,on-cmds-dsi-state = "DSI_LP_MODE";
+		qcom,panel-off-cmds = [05 01 00 00 32 00 02 28 00
+					05 01 00 00 78 00 02 10 00];
+		qcom,off-cmds-dsi-state = "DSI_HS_MODE";
+	};
+};

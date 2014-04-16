@@ -1,0 +1,1 @@
+obj-$(CONFIG_BOARD_ZTEMT_NUBIA) += nubia-board.o nubia-gpiomux.o nubia-clock.o

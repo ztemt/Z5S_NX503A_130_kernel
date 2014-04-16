@@ -1,0 +1,30 @@
+choice
+	depends on ARCH_MSM8974
+	prompt "MSM8974_MTP Based Board"
+
+config ARCH_MSM8974_ORIG
+	bool "Original ARCH_MSM8974"
+	help
+	  Support for Qualcomm MSM8974 MTP original eval board.
+
+config BOARD_ZTEMT_NUBIA
+	bool "ZTEMT NUBIA"
+	help
+	  Support for the ZTEMT NUBIA board.
+
+endchoice
+
+config ZTEMT_RESTART
+	bool "ZTEMT restart"
+	help
+	  Support for the ZTEMT restart
+
+config ZTEMT_UART
+	bool "ZTEMT uart"
+	help
+	  Support for the ZTEMT board uart.
+
+config EMMC_UNSUPPORTED_HPI
+	bool "ZTEMT emmc unsupported hpi feature"
+	help
+	  emmc unsupported hpi feature.
